@@ -33,7 +33,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.shininet.bukkit.playerheads.events.LivingEntityDropHeadEvent;
 
 /**
  *
@@ -44,7 +43,6 @@ public class RPEPlugin extends JavaPlugin implements Listener {
     
     WorldGuardPlugin wgp = null;
     WorldGuard wg = null;
-    LivingEntityDropHeadEvent event;
     
     EyeSpamPreventer eyeDelayer = new EyeSpamPreventer(20,500);
     PortalBreakSpamPreventer portalAntispam = new PortalBreakSpamPreventer(5,5*60*1000);
