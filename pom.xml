@@ -19,14 +19,14 @@
     </organization>
 
     <scm>
-        <developerConnection>scm:git:git@github.com:crashdemons/WGTrophyFlags.git</developerConnection>
-        <connection>scm:git:git://github.com/crashdemons/WGTrophyFlags.git</connection>
-        <url>https://github.com/crashdemons/WGTrophyFlags/tree/master/</url>
+        <developerConnection>scm:git:git@github.com:crashdemons/RemovablePortalEyes.git</developerConnection>
+        <connection>scm:git:git://github.com/crashdemons/RemovablePortalEyes.git</connection>
+        <url>https://github.com/crashdemons/RemovablePortalEyes/tree/master/</url>
     </scm>
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/crashdemons/WGTrophyFlags/issues</url>
+        <url>https://github.com/crashdemons/RemovablePortalEyes/issues</url>
     </issueManagement>
     <repositories>
 	<repository>
