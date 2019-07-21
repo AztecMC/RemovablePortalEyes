@@ -34,8 +34,11 @@ public class PortalBreakSpamPreventer extends EventSpamPreventer {
                 return false;
             }
             if (record.playerId.equals(playerId)) {
-                return true;
+                if (super.closeTo(record, interactThresholdMs)) {
+                        return true;
+                }
             }
+            
             return false;
         }
     }
