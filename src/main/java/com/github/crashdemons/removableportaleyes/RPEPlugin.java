@@ -163,6 +163,9 @@ public class RPEPlugin extends JavaPlugin implements Listener {
         EndPortalFrame frame = (EndPortalFrame) blockData;
         debug(" eye:"+frame.hasEye());
         
+        
+        if(!player.hasPermission("removableportaleyes.remove")) return;//player has permission denied for removing eyes
+        
 
         
         synchronized(instance){
@@ -183,12 +186,15 @@ public class RPEPlugin extends JavaPlugin implements Listener {
             
             if(getFirstPortal(block,frame).getType()==Material.END_PORTAL){//deactivating a portal
                 debug(" deactivating portal");
-                if(portalAntispam.checkEvent(event).isSpam()){
-                    debug("   cancelling spam interact");
-                    player.sendMessage(ChatColor.RED+"You must wait 5 minutes before deactivating another End Portal. "+ChatColor.GRAY+ChatColor.ITALIC+"("+"Debes esperar 5 minutos antes de desactivar otro Portal del End"+")");
-                    event.setCancelled(true);
-                    return;
-                }else portalAntispam.addEvent(event);//reset spam timer only on real portal destructions
+                boolean bypasstimer = player.hasPermission("removableportaleyes.bypasstimer");
+                if(!bypasstimer){
+                    if(portalAntispam.checkEvent(event).isSpam()){
+                        debug("   cancelling spam interact");
+                        player.sendMessage(ChatColor.RED+"You must wait 5 minutes before deactivating another End Portal. "+ChatColor.GRAY+ChatColor.ITALIC+"("+"Debes esperar 5 minutos antes de desactivar otro Portal del End"+")");
+                        event.setCancelled(true);
+                        return;
+                    }else portalAntispam.addEvent(event);//reset spam timer only on real portal destructions
+                }
             }
         }
         

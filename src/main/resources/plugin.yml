@@ -7,3 +7,20 @@ api-version: 1.13
 depend: [ WorldGuard ]
 
 main: com.github.crashdemons.removableportaleyes.RPEPlugin
+
+
+permissions:
+    removableportaleyes.*:
+        description: gives all permissions for RPE
+        default: false
+        children:
+            removableportaleyes.remove: true
+            removableportaleyes.bypasstimer: true
+
+    removableportaleyes.remove:
+        description: Give permission to remove ender eyes from portals
+        default: true
+    removableportaleyes.bypasstimer:
+        description: Give permission to bypass the timer for closing portals
+        default: op
+
