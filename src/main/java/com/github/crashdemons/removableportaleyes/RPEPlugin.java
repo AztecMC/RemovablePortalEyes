@@ -110,11 +110,9 @@ public class RPEPlugin extends JavaPlugin implements Listener {
         return FACES[i];
     }*/
     private void breakPortalFromPortal(Block block){//bad recursive method but the max depth for a normal end portal is low.
-        block.breakNaturally();
-        for(BlockFace face : FACES){
-            Block adjacentBlock = block.getRelative(face);
-            if(adjacentBlock.getType()==Material.END_PORTAL) breakPortalFromPortal(adjacentBlock);
-        }
+        PortalBreaker breaker = new PortalBreaker();
+        breaker.startWith(block);
+        breaker.breakAll();
     }
     
     private Block getFirstPortal(Block block, EndPortalFrame frame){
