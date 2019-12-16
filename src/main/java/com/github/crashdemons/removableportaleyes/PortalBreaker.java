@@ -16,7 +16,7 @@ import org.bukkit.block.BlockFace;
  */
 public class PortalBreaker extends BlockMapper {
     
-    private static final BlockFace[] FACES = new BlockFace[]{BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST};
+    private static final BlockFace[] FACES = new BlockFace[]{BlockFace.NORTH, BlockFace.EAST, BlockFace.SOUTH, BlockFace.WEST, BlockFace.UP, BlockFace.DOWN};
     private static final Material[] MATERIALS = new Material[]{Material.END_PORTAL};
     
     public PortalBreaker(){
